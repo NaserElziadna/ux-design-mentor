@@ -150,6 +150,8 @@ Paste this into Claude Code — it installs the plugin itself, then exercises al
 > 6. VERIFY: run the UX/accessibility audit script and fix every finding, verify every text/background pair with the contrast tool, optimize all images for web, then have the design-analyst agent do a principle-cited review and the visual-reviewer agent screenshot it at 1440px and 390px — apply their top fixes.
 > 7. GRADE: score the result against the evaluation checklist, citing the specific book, heuristic, or law behind each major decision.
 
+**Note:** Claude Code loads plugin skills at session start — so after the install step, restart Claude Code and paste the prompt again. The second run does the full workout. Expect 10+ minutes: it downloads real images and drives a real browser.
+
 ## Quick Start
 
 ### User-Invoked Skills
