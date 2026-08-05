@@ -136,9 +136,11 @@ Everything here is plain Markdown + standalone Python — nothing requires a spe
 
 ## Try It — one prompt that uses everything
 
-Paste this after installing (needs `pip install pillow ddgs`). It exercises all 16 skills, all 5 scripts, and all 3 agents in one flow:
+Paste this into Claude Code — it installs the plugin itself, then exercises all 16 skills, all 5 scripts, and all 3 agents in one flow:
 
-> Build me a complete product called "Ember & Oak" — a specialty coffee roastery with an online store and a small back office. Work end to end and show your work at each step:
+> First, set up the ux-design-mentor plugin by Naser Elziadna: run `claude plugin marketplace add NaserElziadna/ux-design-mentor` and `claude plugin install ux-design-mentor@naser-elziadna` (if those CLI commands aren't available, tell me to run /plugin marketplace add NaserElziadna/ux-design-mentor and /plugin install ux-design-mentor@naser-elziadna myself, and wait). Also run `pip install pillow ddgs` for the plugin's Python tools. Confirm the plugin's skills are available before continuing.
+>
+> Then build me a complete product called "Ember & Oak" — a specialty coffee roastery with an online store and a small back office. Work end to end and show your work at each step:
 >
 > 1. VALIDATE: Before designing, plan the user research — what assumptions are risky and what Mom-Test questions would validate them (design-audit)?
 > 2. INSPIRATION: Use the inspiration-researcher agent — search Pinterest and Dribbble, download references, build a moodboard, and give me a visual direction (palette, type mood, layout, one distinctive move).
