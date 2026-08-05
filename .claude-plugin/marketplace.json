@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "ux-design-mentor",
+  "name": "naser-elziadna",
   "description": "UI/UX design mentor for AI coding agents: evaluation, generation, image scraping/inspiration, design tokens, a11y audits \u2014 grounded in 10 design books, NN/g, Baymard, Material 3, Apple HIG, and WCAG 2.2.",
   "owner": {
     "name": "Naser Elziadna",

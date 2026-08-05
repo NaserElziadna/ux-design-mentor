@@ -66,7 +66,7 @@ Works with every major AI coding agent. The plugin format (skills + agents + AGE
 
 ```
 /plugin marketplace add NaserElziadna/ux-design-mentor
-/plugin install ux-design-mentor@ux-design-mentor
+/plugin install ux-design-mentor@naser-elziadna
 ```
 
 ### Codex CLI
