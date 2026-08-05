@@ -54,22 +54,79 @@ A comprehensive Claude Code plugin that helps you design better UIs/UX by levera
 
 ## Installation
 
-### Claude Code (plugin)
+Works with every major AI coding agent. The plugin format (skills + agents + AGENTS.md) is supported natively by most clients; for the rest, use the manual setup at the bottom.
+
+### Claude Code
 
 ```
 /plugin marketplace add NaserElziadna/ux-design-mentor
 /plugin install ux-design-mentor@ux-design-mentor
 ```
 
-For the image tools: `pip install pillow ddgs` (optional: set `PEXELS_API_KEY` / `UNSPLASH_ACCESS_KEY` for stock photo APIs).
+### Codex CLI
 
-### Any other AI agent (Codex, Cursor, Windsurf, Copilot, aider, ...)
-
-Clone the repo and point your agent at it — see **[AGENTS.md](AGENTS.md)**. The knowledge base is plain Markdown (skills + references) and the tools are standalone Python scripts; nothing requires Claude. For system-prompt embedding, use `exports/system-prompt.txt`.
+Run `/plugins`, then:
 
 ```
+/plugins install https://github.com/NaserElziadna/ux-design-mentor
+```
+
+Or clone the repo and add a pointer to `ux-design-mentor/AGENTS.md` in your `~/.codex/AGENTS.md`.
+
+### Codex App
+
+Plugins → paste `https://github.com/NaserElziadna/ux-design-mentor` → **+**
+
+### Cursor
+
+```
+/add-plugin https://github.com/NaserElziadna/ux-design-mentor
+```
+
+Or manually: clone the repo, then create `.cursor/rules/ux-design-mentor.mdc` containing the contents of `exports/system-prompt.txt` (or a rule that says "consult ux-design-mentor/AGENTS.md for all UI/UX work").
+
+### Gemini CLI
+
+```
+gemini extensions install https://github.com/NaserElziadna/ux-design-mentor
+```
+
+### GitHub Copilot / Copilot CLI
+
+```
+copilot plugin install https://github.com/NaserElziadna/ux-design-mentor
+```
+
+Or manually: clone the repo and append to `.github/copilot-instructions.md`: "For any UI/UX design work, consult ux-design-mentor/AGENTS.md and its skill files."
+
+### OpenCode
+
+Clone into your project (or a shared tools folder) — OpenCode reads `AGENTS.md` automatically:
+
+```bash
 git clone https://github.com/NaserElziadna/ux-design-mentor.git
 ```
+
+Then add to your `opencode.json`: `"instructions": ["ux-design-mentor/AGENTS.md"]`
+
+### Windsurf
+
+Clone the repo, then add to `.windsurfrules`: "For all UI/UX design work, consult ux-design-mentor/AGENTS.md and follow its skill files."
+
+### aider
+
+```bash
+git clone https://github.com/NaserElziadna/ux-design-mentor.git
+aider --read ux-design-mentor/AGENTS.md
+```
+
+### Any other agent (manual setup)
+
+Everything here is plain Markdown + standalone Python — nothing requires a specific client:
+
+1. `git clone https://github.com/NaserElziadna/ux-design-mentor.git`
+2. Point your agent at **[AGENTS.md](AGENTS.md)** (task → skill-file map + tool commands), or embed `exports/system-prompt.txt` into your agent's system prompt / rules file.
+3. For the Python tools: `pip install pillow ddgs` (optional: `PEXELS_API_KEY` / `UNSPLASH_ACCESS_KEY` env vars for stock photo APIs).
 
 ## Quick Start
 
