@@ -1,5 +1,11 @@
 # UX Design Mentor Plugin
 
+**by [Naser Elziadna](https://github.com/NaserElziadna)**
+
+[![CI](https://github.com/NaserElziadna/ux-design-mentor/actions/workflows/ci.yml/badge.svg)](https://github.com/NaserElziadna/ux-design-mentor/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](CHANGELOG.md)
+
 A comprehensive Claude Code plugin that helps you design better UIs/UX by leveraging insights from 10 essential design books plus industry-standard supplementary frameworks. It evaluates, generates, and teaches design principles — covering UX process, visual execution, design-system consistency, and non-technical admin UX — in a non-generic, context-aware way.
 
 ## Features
@@ -334,3 +340,11 @@ For issues or feature requests, see the plugin documentation or contact the auth
 ## License
 
 MIT - Feel free to use, modify, and distribute.
+
+---
+
+## Author
+
+Built and maintained by **Naser Elziadna** — [github.com/NaserElziadna](https://github.com/NaserElziadna)
+
+If this plugin helps you design better products, star the repo and share it.
