@@ -1,0 +1,19 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Compile all scripts
+        run: python -m py_compile skills/*/scripts/*.py
+      - name: Tools self-test (stdlib-only paths)
+        run: |
+          python skills/design-image-tools/scripts/image_tools.py contrast "#1a1a2e" "#e0e0f0"
+          python skills/design-systems/scripts/design_tokens.py "#4f46e5" > /dev/null
+          printf '<html><body><img src=x><a href=y>click here</a></body></html>' > /tmp/bad.html
+          python skills/design-evaluate/scripts/audit_page.py /tmp/bad.html | grep -q img-alt
+      - name: Validate JSON manifests
+        run: python -c "import json;[json.load(open(p)) for p in ['.claude-plugin/plugin.json','.claude-plugin/marketplace.json']];print('manifests ok')"

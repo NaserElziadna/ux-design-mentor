@@ -156,6 +156,12 @@ Newer skills (0.3.0–0.5.0):
 - "Design the first-run experience / empty states" → **design-onboarding**
 - "Does this work on phones?" / "bottom nav or hamburger?" → **design-mobile**
 
+## Slash Commands (Claude Code)
+
+- `/ux-design-mentor:audit [path]` — measured UX/a11y audit + principle review
+- `/ux-design-mentor:tokens #4f46e5` — WCAG-validated design-token system
+- `/ux-design-mentor:inspire coffee shop landing` — inspiration hunt + moodboard
+
 ## Python Toolbelt (5 scripts)
 
 | Script | Skill | Does |
