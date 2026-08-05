@@ -134,6 +134,28 @@ Everything here is plain Markdown + standalone Python — nothing requires a spe
 2. Point your agent at **[AGENTS.md](AGENTS.md)** (task → skill-file map + tool commands), or embed `exports/system-prompt.txt` into your agent's system prompt / rules file.
 3. For the Python tools: `pip install pillow ddgs` (optional: `PEXELS_API_KEY` / `UNSPLASH_ACCESS_KEY` env vars for stock photo APIs).
 
+## Try It
+
+After installing, paste this into Claude Code to see the plugin work end-to-end (inspiration scraping, moodboard, tokens, real images, audit):
+
+> Build me a landing page for a specialty coffee roastery called "Ember & Oak".
+> First use the design-inspiration skill: search Pinterest and Dribbble for references, download them, and build a moodboard. Tell me the direction (palette, type mood, layout) you extracted from the references.
+> Then generate design tokens from the direction palette's main color, fill the page with real license-safe images (Openverse/stock), analyze the hero image for text-overlay safety, and generate a favicon.
+> When the page is built, run the UX/accessibility audit script on it and fix everything it finds, then run the visual-reviewer agent on it and apply the top fixes.
+
+### The full-workout prompt (every skill, script, and agent)
+
+For a complete tour — all 16 skills, all 5 scripts, all 3 agents:
+
+> I'm building "PulseBoard", a B2B SaaS analytics product. Work through this end to end:
+> 1. Should I build a usage-analytics dashboard feature at all? Plan the user research and the questions to ask (design-audit / Mom Test).
+> 2. Use the inspiration-researcher agent: find dashboard references on Dribbble/Pinterest, build a moodboard, and give me a visual direction.
+> 3. Generate a WCAG-validated token system from the direction's primary color (design-systems), and explain when I'd need a component library.
+> 4. Design the product: the dashboard screen with correct chart choices (design-dashboards), its dark mode (design-dark-mode), the onboarding + all four empty states (design-onboarding), a settings edit-form with dirty-state handling (design-forms), and an admin panel for non-technical account managers (design-admin-ux).
+> 5. Build the dashboard page as HTML/CSS for mobile too (design-mobile), with purposeful animations (design-motion), non-generic visual craft (design-visual-craft), real images where needed (design-inspiration + design-image-tools), and correct microcopy on every button, error, and empty state (ux-design-principles / ux-writing).
+> 6. Verify: run the audit script, check every text/background pair with the contrast tool, optimize the images, generate the favicon set, then have the design-analyst agent do a final principle-cited review and the visual-reviewer agent screenshot it at desktop and mobile widths.
+> 7. Finish with the evaluation checklist from ux-design-principles, citing which book or law grounds each major decision.
+
 ## Quick Start
 
 ### User-Invoked Skills
