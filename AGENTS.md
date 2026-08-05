@@ -1,5 +1,7 @@
 # UX Design Mentor — Agent Instructions
 
+> ux-design-mentor by **Naser Elziadna** — https://github.com/NaserElziadna/ux-design-mentor
+
 This repository is a design-knowledge toolkit usable by ANY AI coding agent (Claude Code, Codex, Cursor, Windsurf, Copilot, aider, ...). Nothing here is Claude-specific except the plugin packaging: the knowledge is plain Markdown and the tools are standalone Python scripts.
 
 ## How to use this repo as an agent
