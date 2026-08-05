@@ -57,7 +57,7 @@ A comprehensive Claude Code plugin that helps you design better UIs/UX by levera
 ### Claude Code (plugin)
 
 ```
-/plugin marketplace add NaserCambium/ux-design-mentor
+/plugin marketplace add NaserElziadna/ux-design-mentor
 /plugin install ux-design-mentor@ux-design-mentor
 ```
 
@@ -68,7 +68,7 @@ For the image tools: `pip install pillow ddgs` (optional: set `PEXELS_API_KEY` /
 Clone the repo and point your agent at it — see **[AGENTS.md](AGENTS.md)**. The knowledge base is plain Markdown (skills + references) and the tools are standalone Python scripts; nothing requires Claude. For system-prompt embedding, use `exports/system-prompt.txt`.
 
 ```
-git clone https://github.com/NaserCambium/ux-design-mentor.git
+git clone https://github.com/NaserElziadna/ux-design-mentor.git
 ```
 
 ## Quick Start
