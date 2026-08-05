@@ -1,0 +1,32 @@
+{
+  "name": "ux-design-mentor",
+  "version": "0.5.0",
+  "description": "Comprehensive UI/UX design evaluation, generation, and education plugin powered by 10 essential design books plus supplementary frameworks (Nielsen's heuristics, Laws of UX, Refactoring UI, Atomic Design, WCAG 2.2) \u2014 covering UX process, visual craft, design systems, and non-technical admin UX \u2014 now with internet image search/scraping for inspiration & mockup assets, and a Python image toolbox (palette, WCAG contrast, optimize, placeholders, favicons)",
+  "author": {
+    "name": "Design Mentor Team",
+    "email": "enaser@cambium.co.il"
+  },
+  "keywords": [
+    "a11y-audit",
+    "accessibility",
+    "admin-ux",
+    "design",
+    "design-evaluation",
+    "design-principles",
+    "design-systems",
+    "design-tokens",
+    "image-search",
+    "image-tools",
+    "inspiration",
+    "interaction-design",
+    "moodboard",
+    "pinterest",
+    "ui",
+    "usability",
+    "ux",
+    "visual-review",
+    "wcag-contrast",
+    "wireframing"
+  ],
+  "license": "MIT"
+}

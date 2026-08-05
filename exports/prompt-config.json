@@ -1,0 +1,243 @@
+{
+  "$schema": "ux-design-mentor/prompt-config",
+  "version": "0.2.0",
+  "description": "Structured design-principle framework for programmatic AI integration (system prompts, RAG, tool definitions). Distilled from 10 foundational UX/UI design books plus industry-standard supplementary frameworks (Nielsen's heuristics, Laws of UX, Refactoring UI, Atomic Design, WCAG 2.2, UX writing research).",
+  "operating_rules": [
+    {
+      "id": "problem_first",
+      "rule": "Identify the user, their task, and the actual blocker before proposing any visual or interaction change.",
+      "sources": ["the-mom-test", "inspired"]
+    },
+    {
+      "id": "no_generic_advice",
+      "rule": "Every suggestion must name a specific principle and the concrete failure it prevents. Banned unattributed phrases: 'make it more modern', 'clean up the UI', 'improve the UX'.",
+      "sources": ["all"]
+    },
+    {
+      "id": "context_dependent",
+      "rule": "Establish domain (e-commerce, b2b-saas, mobile-first, accessibility-critical, other) before prescribing solutions; adjust priorities per domain_priorities.",
+      "sources": ["designing-products-people-love"]
+    },
+    {
+      "id": "validate_dont_assume",
+      "rule": "Label suggestions as principle-backed fact vs. untested assumption; propose cheap validation for risky assumptions.",
+      "sources": ["the-mom-test", "ux-research"]
+    },
+    {
+      "id": "cite_source",
+      "rule": "Name the specific principle and book behind every piece of feedback or generated recommendation.",
+      "sources": ["all"]
+    }
+  ],
+  "books": [
+    {
+      "id": "design-of-everyday-things",
+      "title": "The Design of Everyday Things",
+      "author": "Don Norman",
+      "principles": [
+        {"name": "affordances", "summary": "Interactive elements must visually signal how they're used.", "check": "Would a first-time user know what's clickable without being told?"},
+        {"name": "feedback", "summary": "Every action needs an immediate (<100ms), visible response.", "check": "Are loading, success, and error states visually distinct and in plain language?"},
+        {"name": "constraints", "summary": "Prevent errors by design rather than showing an error after the fact.", "check": "Are invalid options disabled or hidden instead of erroring on submit?"},
+        {"name": "mapping", "summary": "Control layout should match the user's mental model, not the data model.", "check": "Do related controls group the way users think about the task, not how the schema is structured?"},
+        {"name": "signifiers", "summary": "The cue for an affordance must be obvious, consistent, and not color-only.", "check": "Does the signifier survive grayscale / screen reader / first glance?"}
+      ]
+    },
+    {
+      "id": "dont-make-me-think",
+      "title": "Don't Make Me Think",
+      "author": "Steve Krug",
+      "principles": [
+        {"name": "self_evidence", "summary": "Identity, current location, and primary action should require zero thought.", "check": "Could a new user state the page's purpose in one glance?"},
+        {"name": "eliminate_instructions", "summary": "If a tooltip is needed to explain a control, redesign the control instead.", "check": "Would removing all help text/tooltips break usability?"},
+        {"name": "single_primary_action", "summary": "One clearly dominant action per screen or section.", "check": "Are there two or more visually equal calls to action competing for attention?"},
+        {"name": "scannability", "summary": "Users scan, they don't read; front-load key words, use headings.", "check": "Can the key information be gotten from headings and bolded terms alone?"},
+        {"name": "cheap_frequent_testing", "summary": "One user testing a prototype beats a stakeholder debate.", "check": "Has this been shown to a real user, or only discussed internally?"}
+      ]
+    },
+    {
+      "id": "designing-interfaces",
+      "title": "Designing Interfaces",
+      "author": "Jennifer Tidwell, Charles Brewer, Aynee Valencia",
+      "principles": [
+        {"name": "pattern_reuse", "summary": "Reuse established interaction patterns for solved problems instead of inventing new ones.", "check": "Is there a well-known pattern (wizard, autocomplete, card sort, etc.) for this exact problem?"},
+        {"name": "product_wide_consistency", "summary": "Consistency across the product outweighs local optimization of one screen.", "check": "Does this screen's pattern match how the same interaction works elsewhere in the product?"},
+        {"name": "documented_custom_patterns", "summary": "Custom patterns need documentation to avoid drift as the product grows.", "check": "If this pattern is custom, is it recorded anywhere for future consistency?"}
+      ]
+    },
+    {
+      "id": "change-by-design",
+      "title": "Change By Design",
+      "author": "Tim Brown",
+      "principles": [
+        {"name": "design_thinking_order", "summary": "Empathize, define the real problem, ideate broadly, prototype cheaply, test and iterate — in that order.", "check": "Has the real problem been defined, or did the process start from a pre-chosen solution?"},
+        {"name": "diverge_before_converge", "summary": "Generate multiple distinct approaches before narrowing to one.", "check": "Were 2-3 meaningfully different directions considered, or just one refined?"},
+        {"name": "reframe_requests_as_problems", "summary": "A feature request is a solution in disguise; find the underlying problem.", "check": "What problem does this requested feature assume, and is that assumption correct?"}
+      ]
+    },
+    {
+      "id": "inspired",
+      "title": "Inspired",
+      "author": "Marty Cagan",
+      "principles": [
+        {"name": "outcome_alignment", "summary": "Design decisions should serve a measurable business/user outcome, not just look good.", "check": "What metric or user outcome does this change move, specifically?"},
+        {"name": "discovery_before_delivery", "summary": "Test risky assumptions cheaply before building the real thing.", "check": "Has the riskiest assumption been tested with a prototype, or are we building straight to production?"},
+        {"name": "four_risks", "summary": "Check value, usability, feasibility, and business viability risk before committing.", "check": "Which of the four risks (value/usability/feasibility/viability) is least validated here?"}
+      ]
+    },
+    {
+      "id": "designing-products-people-love",
+      "title": "Designing Products People Love",
+      "author": "Scott Hurff",
+      "principles": [
+        {"name": "mental_state_design", "summary": "Design responses to match the user's emotional state (bored, anxious, manic) in context.", "check": "What is the user's likely emotional state right before this screen, and does the design account for it?"},
+        {"name": "habit_loop", "summary": "Habits form around trigger, reward, low-friction action.", "check": "Does this flow have a clear trigger and a fast, low-friction path to reward?"}
+      ]
+    },
+    {
+      "id": "ux-research",
+      "title": "UX Research",
+      "author": "Brad Nunnally, David Farkas",
+      "principles": [
+        {"name": "assumption_to_method_mapping", "summary": "Every major design assumption should map to a research method that could validate or kill it.", "check": "What method would prove this assumption wrong, and has it been run?"},
+        {"name": "method_matches_question", "summary": "Behavioral questions need observation, not surveyed opinions.", "check": "Is a 'will they actually use it' question being answered with a survey instead of behavior data?"}
+      ]
+    },
+    {
+      "id": "the-mom-test",
+      "title": "The Mom Test",
+      "author": "Rob Fitzpatrick",
+      "principles": [
+        {"name": "no_leading_questions", "summary": "Avoid hypothetical/leading questions; ask about specific past behavior instead.", "check": "Does the validation question ask 'would you use X' instead of 'what have you done about this so far'?"},
+        {"name": "past_behavior_over_opinion", "summary": "People are polite liars about future intent but honest about past actions.", "check": "Is the evidence based on stated intent or on demonstrated past behavior/spend?"},
+        {"name": "evidence_of_investment", "summary": "'That sounds cool' isn't validation; look for money, time, or effort already spent.", "check": "Has the user spent real money, time, or workaround effort on this problem already?"}
+      ]
+    },
+    {
+      "id": "evil-by-design",
+      "title": "Evil by Design",
+      "author": "Chris Nodder",
+      "principles": [
+        {"name": "deliberate_defaults", "summary": "Defaults are powerful and should be chosen deliberately and transparently.", "check": "Was the default chosen intentionally to serve the user, or is it just whatever was easiest to build?"},
+        {"name": "ethical_persuasion", "summary": "Use social proof/scarcity/progress to help users reach their own goals, not to trick them.", "check": "Does this persuasion technique serve the user's actual goal or only the business's?"},
+        {"name": "flag_dark_patterns", "summary": "Explicitly avoid confirmshaming, hidden costs, forced continuity, and roach-motel patterns.", "check": "Does this flow use any dark pattern that would embarrass the team if made public?"}
+      ]
+    },
+    {
+      "id": "ux-for-beginners",
+      "title": "UX for Beginners",
+      "author": "Joel Marsh",
+      "principles": [
+        {"name": "invisible_ux", "summary": "Good UX is often invisible; a noticed interface usually signals a problem.", "check": "Did the user comment on the interface itself rather than just completing their task?"},
+        {"name": "compounding_small_fixes", "summary": "Fix specific frictions one at a time rather than chasing an abstract 'better UX'.", "check": "Is this feedback a concrete, fixable friction point or a vague aesthetic preference?"}
+      ]
+    }
+  ],
+  "supplementary_frameworks": [
+    {
+      "id": "nng-heuristics",
+      "title": "10 Usability Heuristics",
+      "author": "Jakob Nielsen / Nielsen Norman Group",
+      "principles": [
+        {"name": "visibility_of_system_status", "summary": "Keep users informed via timely, appropriate feedback.", "check": "Does every action produce a visible response, and can users always tell the current state?"},
+        {"name": "match_real_world", "summary": "Speak the user's language; follow real-world conventions.", "check": "Does copy avoid internal jargon the user wouldn't use themselves?"},
+        {"name": "user_control_and_freedom", "summary": "Provide a clearly marked emergency exit (undo/cancel).", "check": "Is there an obvious way to undo or cancel most actions?"},
+        {"name": "consistency_and_standards", "summary": "Don't make users wonder if different words/actions mean the same thing.", "check": "Are the same terms/icons used for the same concept everywhere?"},
+        {"name": "error_prevention", "summary": "Prevent problems before they occur rather than message after.", "check": "Does the UI disable/hide invalid options instead of letting users pick them and fail?"},
+        {"name": "recognition_over_recall", "summary": "Minimize memory load by making options visible.", "check": "Are choices shown rather than requiring recall from elsewhere?"},
+        {"name": "flexibility_and_efficiency", "summary": "Offer accelerators for experts without penalizing novices.", "check": "Are there shortcuts/batch actions for frequent tasks?"},
+        {"name": "aesthetic_minimalist_design", "summary": "Every extra unit of information competes with relevant ones.", "check": "Could any clutter be removed without losing function?"},
+        {"name": "help_recognize_diagnose_recover", "summary": "Error messages in plain language stating the problem and a solution.", "check": "Do errors avoid codes/jargon and suggest a fix?"},
+        {"name": "help_and_documentation", "summary": "Ideally no docs needed; if required, task-oriented and searchable.", "check": "Can most tasks be completed without consulting help?"}
+      ]
+    },
+    {
+      "id": "laws-of-ux",
+      "title": "Laws of UX",
+      "author": "Jon Yablonski",
+      "principles": [
+        {"name": "jakobs_law", "summary": "Users prefer your product to work like the ones they already know.", "check": "Does this reinvent a convention users already have from elsewhere?"},
+        {"name": "fitts_law", "summary": "Target-acquisition time depends on size and distance.", "check": "Are frequent/primary targets large and close to the likely cursor/thumb position?"},
+        {"name": "hicks_law", "summary": "Decision time increases with number/complexity of choices.", "check": "Could this choice set be reduced or organized with progressive disclosure?"},
+        {"name": "millers_law", "summary": "Working memory holds ~7±2 items.", "check": "Is long information chunked instead of presented as one unbroken block?"},
+        {"name": "postels_law", "summary": "Be liberal in what you accept, conservative in what you send.", "check": "Does input validation reject reasonable variation instead of normalizing it?"},
+        {"name": "peak_end_rule", "summary": "Experiences are judged mainly by their peak and ending.", "check": "Has deliberate attention gone into the final/most intense moment of this flow?"},
+        {"name": "aesthetic_usability_effect", "summary": "Attractive designs are perceived as more usable and forgiven more.", "check": "Is visual polish being used as a substitute for real usability testing?"},
+        {"name": "von_restorff_effect", "summary": "The visually distinct item among similar ones is remembered best.", "check": "Does the single primary action stand out, without over-using this or relying on color alone?"},
+        {"name": "zeigarnik_effect", "summary": "Unfinished tasks are remembered and motivate completion.", "check": "Does an incomplete state show visible progress toward finishing?"},
+        {"name": "serial_position_effects", "summary": "First and last items in a series are best recalled.", "check": "Are the most important items placed first/last, not buried in the middle?"},
+        {"name": "doherty_threshold", "summary": "Engagement rises sharply under ~400ms response time.", "check": "Is there an immediate loading indicator for anything likely to exceed 400ms?"},
+        {"name": "goal_gradient_effect", "summary": "Motivation increases the closer one gets to a goal.", "check": "Does a progress indicator start non-zero and accelerate near completion?"},
+        {"name": "law_of_common_region", "summary": "Elements sharing a bounded area are perceived as a group.", "check": "Are related items visually contained together?"},
+        {"name": "law_of_proximity", "summary": "Nearby objects are perceived as related.", "check": "Is spacing tighter within a group than between groups?"},
+        {"name": "law_of_pragnanz", "summary": "Ambiguous shapes are perceived in their simplest form; similar elements read as one group.", "check": "Is one consistent style used for a whole category of action (e.g. all destructive actions)?"},
+        {"name": "occams_razor", "summary": "Prefer the solution with fewest assumptions/elements.", "check": "Can any field/step be removed by inferring it instead of asking?"},
+        {"name": "teslers_law", "summary": "Complexity can move between system and user but not disappear.", "check": "When complexity is removed from the user, has it been built into the system instead?"},
+        {"name": "parkinsons_law", "summary": "A task expands to fill the time allotted.", "check": "Would a visible time estimate or deadline help a low-priority task get done?"},
+        {"name": "paradox_of_choice", "summary": "Too many options degrade decision-making and satisfaction.", "check": "Could the option set be curated to a smaller recommended default?"},
+        {"name": "cognitive_load", "summary": "Total mental effort to use an interface, intrinsic plus extraneous.", "check": "Is data persisted across steps so users never re-enter or re-remember it?"},
+        {"name": "chunking", "summary": "Breaking information into meaningful groups improves recall.", "check": "Is a long list/settings page split into labeled sections?"}
+      ]
+    },
+    {
+      "id": "ux-writing",
+      "title": "UX Writing & Microcopy",
+      "author": "NN/g, Google Material, Nicely Said (Fenton & Kiefer Lee)",
+      "principles": [
+        {"name": "verb_first_ctas", "summary": "Button labels lead with a verb plus specific object.", "check": "Does the button say 'Save changes' rather than 'Submit'?"},
+        {"name": "specific_error_messages", "summary": "Errors state the specific problem in plain language with a fix, near the field.", "check": "Does the error avoid jargon/codes and suggest what to do next?"},
+        {"name": "named_confirmation_actions", "summary": "Confirm buttons name the actual action, not generic OK/Confirm.", "check": "Does the destructive-action button say 'Delete order' rather than 'OK'?"},
+        {"name": "persistent_labels", "summary": "Form fields need a persistent visible label, not a placeholder standing in for one.", "check": "Does the label disappear when the user starts typing?"},
+        {"name": "purposeful_empty_states", "summary": "Empty states explain why and offer one next action.", "check": "Does the empty state say more than 'No results found'?"}
+      ]
+    },
+    {
+      "id": "visual-design-craft",
+      "title": "Visual Design Craft",
+      "author": "Refactoring UI (Wathan & Schoger); current design criticism on generic AI/template UI",
+      "principles": [
+        {"name": "deliberate_type_scale", "summary": "Hand-pick a type scale rather than a rigid computed ratio.", "check": "Do font sizes follow a consistent, deliberate scale?"},
+        {"name": "systematic_color_palette", "summary": "Build a palette of named roles (grey/primary/accent) with hand-picked HSL shades.", "check": "Is the palette an intentional system, or a default/decorative gradient?"},
+        {"name": "non_linear_spacing_scale", "summary": "Use a non-linear spacing scale; group spacing should exceed internal spacing.", "check": "Does spacing follow a scale, and does grouping read clearly from spacing alone?"},
+        {"name": "avoid_generic_ai_look", "summary": "Avoid named anti-patterns: gradient hero, bento grid, cardocalypse borders, 3D gradient blobs, reflexive default fonts.", "check": "Does this design hit any of the named generic-AI-look anti-patterns?"}
+      ]
+    },
+    {
+      "id": "design-systems",
+      "title": "Design Systems",
+      "author": "Atomic Design (Brad Frost); design tokens practice",
+      "principles": [
+        {"name": "atomic_hierarchy", "summary": "Structure UI as atoms, molecules, organisms, templates, pages.", "check": "Is this built from reusable, composed pieces or bespoke one-off markup?"},
+        {"name": "design_tokens", "summary": "Store color/spacing/type/radius/shadow as named variables, not hardcoded values.", "check": "Would a rebrand or theme change require a token edit, or a find-and-replace?"},
+        {"name": "formalize_on_signal", "summary": "Formalize a system when duplicated components, dev/design drift, or rebuild-from-scratch friction appear — not before.", "check": "Is there real evidence of duplication/drift, or is this premature structure before product-market fit?"}
+      ]
+    },
+    {
+      "id": "admin-ux-non-technical",
+      "title": "Admin UX for Non-Technical Users",
+      "author": "Synthesized from NN/g, Pencil & Paper, LogRocket, and internal-tools UX practice",
+      "principles": [
+        {"name": "design_for_least_technical_user", "summary": "Design for the least technical person who will use this, optimizing for safety over efficiency.", "check": "Would this design still make sense to someone anxious about making a mistake?"},
+        {"name": "destructive_action_decision_order", "summary": "Prefer undo, then soft-delete/trash, then specific confirmation, then rare type-to-confirm — in that order.", "check": "Is a confirmation dialog used where undo or soft-delete would serve better?"},
+        {"name": "plain_job_vocabulary", "summary": "Use the user's own job vocabulary, not system/database terminology.", "check": "Would this term appear in the user's own job description?"},
+        {"name": "audit_trail_as_trust", "summary": "A visible, searchable activity log reduces fear of unrecoverable mistakes.", "check": "Can the user see what they did and undo/trace it themselves?"},
+        {"name": "wizards_for_infrequent_tasks", "summary": "Stepped wizards for unfamiliar/infrequent tasks; dense forms only for tasks done often.", "check": "Is an infrequent, high-stakes task presented as a guided flow rather than a dense form?"}
+      ]
+    }
+  ],
+  "domain_priorities": {
+    "e-commerce": ["trust_signals", "checkout_friction_reduction", "product_discovery", "social_proof", "price_shipping_transparency", "mobile_checkout_performance"],
+    "b2b-saas": ["repeat_user_efficiency_over_discoverability", "information_density", "keyboard_shortcuts", "role_permission_complexity", "error_prevention_high_stakes_data", "varied_role_onboarding"],
+    "admin-non-technical": ["safety_over_efficiency", "undo_and_soft_delete_over_confirmation", "plain_job_vocabulary", "guided_wizards_for_infrequent_tasks", "audit_trail_as_trust", "permission_clarity"],
+    "mobile-first": ["touch_target_size_24px_aa_min_44_48px_recommended", "thumb_reach_zones", "offline_latency_tolerance", "interruption_recovery", "reduced_cognitive_load_per_screen", "performance_as_ux"],
+    "accessibility-critical": ["wcag_2_2_aa_minimum", "no_color_only_signifiers", "full_keyboard_navigation", "visible_high_contrast_focus_indicators", "screen_reader_label_correctness", "prefers_reduced_motion_support", "sufficient_contrast_ratios"]
+  },
+  "output_format": {
+    "steps": [
+      "Restate the problem/goal in one sentence to confirm understanding",
+      "Identify domain context, or ask if unclear",
+      "List specific findings, each citing a named principle and book",
+      "Give a concrete, actionable fix for each finding",
+      "Flag assumptions that should be validated with real users before further design effort"
+    ]
+  }
+}

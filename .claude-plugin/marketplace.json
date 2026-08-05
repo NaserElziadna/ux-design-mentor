@@ -1,0 +1,33 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ux-design-mentor",
+  "description": "UI/UX design mentor for AI coding agents: evaluation, generation, image scraping/inspiration, design tokens, a11y audits \u2014 grounded in 10 design books, NN/g, Baymard, Material 3, Apple HIG, and WCAG 2.2.",
+  "owner": {
+    "name": "Naser Elziadna",
+    "email": "enaser@cambium.co.il"
+  },
+  "plugins": [
+    {
+      "name": "ux-design-mentor",
+      "source": "./",
+      "description": "Comprehensive UI/UX design plugin: 16 skills (evaluate, generate, visual craft, forms, motion, dark mode, dashboards, onboarding, mobile, admin UX...), 3 review/research agents, and 5 Python tools (image search & scraping, moodboards, WCAG contrast, page audits, design tokens).",
+      "category": "design",
+      "keywords": [
+        "design",
+        "ux",
+        "ui",
+        "accessibility",
+        "wcag",
+        "design-tokens",
+        "image-search",
+        "moodboard",
+        "forms",
+        "dark-mode"
+      ],
+      "author": {
+        "name": "Naser Elziadna"
+      },
+      "license": "MIT"
+    }
+  ]
+}
